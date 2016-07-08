@@ -1,0 +1,55 @@
+body{
+  height: initial!important;
+  font-family: youyuan ,'Microsoft YaHei' ,sans-serif;
+}
+#online-nums{
+  padding:0 5px;
+  color:#2185D0;
+  font-size: 16px;
+}
+.event{
+  padding: 10px;
+}
+
+.main-panel{
+  margin-top: 60px!important;
+  padding-top: 0!important;
+  border: 1px solid #ccc;
+}
+.sys-msg{
+  height: 140px;
+  border: 1px solid #ccc;
+  overflow-y: auto;
+  padding: 10px;
+}
+.sys-msg p{
+
+}
+.chat-msg{
+  height: 320px;
+  overflow-x:hidden ;
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  padding: 10px;
+  padding-left: 20px;
+}
+.chat-msg p{
+
+}
+.send-msg{
+  height: 50px;
+}
+.send-msg .input-wrap{
+
+}
+.send-msg .input-wrap input{
+
+}
+.send-msg .input-wrap button{
+
+}
+.user-list{
+  border-left: 1px solid #ccc;
+  padding-left: 1.5rem!important;
+  padding-right: 1.5rem!important;
+}

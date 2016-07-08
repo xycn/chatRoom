@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="full-screen" content="yes">
+    <meta name="description" content="undefined">
+    <link href="bower_components/semantic/dist/semantic.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <script src="js/socket.io.js"></script>
+    <title>chatRoom</title></head>
+</html>
+<body>
+<div class="ui basic small modal">
+    <div class="header">
+        <div class="ui icon inverted">
+            <i class="icon info"></i>
+            设置昵称
+        </div>
+    </div>
+    <div class="content">
+        <p>请输入您要使用的聊天昵称：</p>
+        <div class="ui left icon input fluid">
+            <input type="text"/>
+            <i class="icon edit"></i>
+        </div>
+    </div>
+    <div class="actions">
+        <div class="ui approve positive button">确定</div>
+        <div class="ui cancel negative button">取消</div>
+    </div>
+</div>
+<header class="ui fixed inverted menu">
+    <div class="ui container">
+        <a class="item header active"><h3>咚喵聊天室</h3></a>
+        <div class="right menu">
+            <div class="item"><a class="ui label">设置昵称</a></div>
+            <!--<div class="item"><a class="ui button">注册</a></div>-->
+        </div>
+    </div>
+</header>
+<section class="main-panel ui container grid">
+    <section class="chat-sec column thirteen wide">
+        <div class="sys-msg row ui feed divided">
+            <!--<div class="event ui">-->
+                <!--<div class="content">-->
+                    <!--<div class="summary"><a href="">美女</a>加入聊天室-->
+                        <!--<div class="date">刚刚</div>-->
+                    <!--</div>-->
+                    <!--<div class="meta">-->
+                        <!--<a href="" class="like">-->
+                            <!--<i class="like icon"></i>-->
+                            <!--活跃分子-->
+                        <!--</a>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="event ui ">-->
+                <!--<div class="content">-->
+                    <!--<div class="summary"><a href="">美女</a>加入聊天室-->
+                        <!--<div class="date">刚刚</div>-->
+                    <!--</div>-->
+                    <!--<div class="extra text">-->
+                        <!--大家鼓掌欢迎，哈哈哈哈，美女进入了哦！-->
+                    <!--</div>-->
+                    <!--<div class="meta">-->
+                        <!--<a href="" class="like">-->
+                            <!--<i class="like icon"></i>-->
+                            <!--活跃分子-->
+                        <!--</a>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+        <div class="chat-msg row ui feed">
+            <div class="ui comments">
+               <!--<div class="comment">-->
+                   <!--<a href="" class="avatar">-->
+                       <!--<img src="/images/xiaoxin.jpg" alt=""/>-->
+                   <!--</a>-->
+                   <!--<div class="content">-->
+                       <!--<a href="" class="author">小新</a>-->
+                       <!--<div class="metadata">一分钟之前</div>-->
+                       <!--<div class="text">今天上班又迟到了</div>-->
+                       <!--<div class="actions"><a href="">点赞</a></div>-->
+                   <!--</div>-->
+                   <!--<div class="divider ui"></div>-->
+               <!--</div>-->
+                <!--<div class="comment">-->
+                    <!--<a href="" class="avatar">-->
+                        <!--<img src="/images/wanzi.jpg" alt=""/>-->
+                    <!--</a>-->
+                    <!--<div class="content">-->
+                        <!--<a href="" class="author">小新</a>-->
+                        <!--<div class="metadata">一分钟之前</div>-->
+                        <!--<div class="text">今天上班又迟到了</div>-->
+                        <!--<div class="actions"><a href="">点赞</a></div>-->
+                    <!--</div>-->
+                    <!--<div class="divider ui"></div>-->
+                <!--</div>-->
+                <!--<div class="comment">-->
+                    <!--<a href="" class="avatar">-->
+                        <!--<img src="/images/xiaoxin.jpg" alt=""/>-->
+                    <!--</a>-->
+                    <!--<div class="content">-->
+                        <!--<a href="" class="author">小新</a>-->
+                        <!--<div class="metadata">一分钟之前</div>-->
+                        <!--<div class="text">今天上班又迟到了</div>-->
+                        <!--<div class="actions"><a href="">点赞</a></div>-->
+                    <!--</div>-->
+                    <!--<div class="divider ui"></div>-->
+                <!--</div>-->
+            </div>
+        </div>
+        <div class="send-msg row ui form">
+            <div class="input-wrap ui fields">
+                <div class="ui left icon input big field thirteen wide">
+                    <input  placeholder="输入聊天内容.." />
+                    <i class="icon edit"></i>
+                </div>
+                <button class="ui animated fade button primary big field three wide">
+                    <div class="visible content">发送</div>
+                    <div class="hidden content">OK</div>
+                </button>
+            </div>
+        </div>
+    </section>
+    <aside class="user-list column three wide">
+        <h4>当前在线<span id='online-nums'>2</span>人</h4>
+        <div class="ui divider"></div>
+        <div class="ui middle aligned divided animated  list">
+            <!--<div class="item">-->
+                <!--<img class="ui avatar image" src="/images/xiaoxin.jpg">-->
+                <!--<div class="content">-->
+                    <!--<a class="header">武杰操.小新</a>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="item">-->
+                <!--<img class="ui avatar image" src="/images/wanzi.jpg">-->
+                <!--<div class="content">-->
+                    <!--<a class="header">可爱.小丸子</a>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+    </aside>
+</section>
+<footer>
+    <div class="copyright"></div>
+</footer>
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/semantic/dist/semantic.min.js"></script>
+<script type="text/javascript" src="/js/lib/require.js" data-main="/js/index"></script>
+</body>

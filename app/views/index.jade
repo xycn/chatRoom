@@ -1,0 +1,60 @@
+doctype html
+html
+	head
+		meta(http-equiv="Content-Type",content="text/html; charset=UTF-8")
+		meta(name="viewport",content="width=device-width,initial-scale=1,minimum-scale=1, maximum-scale=1, user-scalable=no")
+		meta(name="format-detection",content="telephone=no,email=no")
+		meta(name="apple-touch-fullscreen",content="yes")
+		meta(name="full-screen",content="yes")
+		meta(name="description" content="#{description}")
+		link(href="bower_components/semantic/dist/semantic.css" rel="stylesheet")
+		link(href="css/main.css" rel="stylesheet")
+		script(src="js/socket.io.js")
+		script.
+			var socket=io.connect();
+			socket.on('user added',function(data){
+				document.getElementById('show_name').innerHTML=data+'已连接';
+			})
+			window.onload=function(){
+				socket.emit('push','这是从客户端发送的数据')
+				var btn =document.getElementById('btn');
+				//- btn.onclick=function(){
+				//- 	socket.emit('user connected',document.getElementById('input_name').value)
+				//- }
+			};
+		title chatRoom
+body
+	header.ui.fixed.inverted.menu
+		div.ui.container
+			a.item.header chatRoom
+			div.right.menu
+				div.item
+					a.ui.button Sign In
+				div.item
+					a.ui.button Sign Up
+	section.main-panel.ui.container.grid
+		section.chat-sec.column.eleven.wide
+			div.sys-msg.row
+				p 张三已登录
+				p 张三已登录
+				p 张三已登录
+			div.chat-msg.row
+				p 张三你好
+				p 张三你好
+				p 张三你好
+			div.send-msg.row
+				div.input-wrap
+					input
+					button
+		aside.user-list.column.five.wide.right.floated
+			p 张三
+			p 张三
+			p 张三
+			p 张三
+			p 张三
+			p 张三
+	footer
+		div.copyright
+	script(src="bower_components/jquery/dist/jquery.min.js")
+	script(src="bower_components/react/react-with-addons.min.js")
+	script(src="bower_components/react/react-dom.min.js")

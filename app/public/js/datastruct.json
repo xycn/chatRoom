@@ -1,0 +1,64 @@
+//用户登录(如果是新用户则通过传递字段区分 是否设置了用户名，node端统一处理，
+//不再区分set name 和not set name类似的socket事件，只要是用户进入都通过这个事件处理并广播)
+{
+  type:"logined",
+  time:"",
+  users:[
+      {
+        uid:1,
+        name:""
+        profile:""
+      },{
+        uid:2,
+        name:""
+        profile:""
+      }
+  ],
+  activeUser:{
+    uid:,
+    name:""
+    profile:""
+  }
+}
+//发送消息
+{
+  type:"message",
+  time:"",
+  message:{
+    user:{
+      uid:,
+      name:""
+      profile:""
+    },
+    content:""
+  }
+}
+//修改用户信息
+{
+  type:"user_modify",
+  users:[{
+    uid:,
+    name:""
+    profile:""
+  }],
+  activeUser:{
+    uid:,
+    name:"",
+    oldName:"",
+    profile:""
+  }
+}
+//退出登录
+{
+  type:"logout",
+  users:[{
+    uid:,
+    name:"",
+    profile:""
+  }],
+  activeUser:{
+    uid:,
+    name:"",
+    profile:""
+  }
+}
