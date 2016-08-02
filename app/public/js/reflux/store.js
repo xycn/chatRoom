@@ -36,6 +36,7 @@ let Store =Reflux.createStore({
         this.appData.clientUser=window.global_user;
         this.sysMsgArr.push(sysMsg);
         this.appData.sysMsg=this.sysMsgArr;
+        this.appData.msg=this.msgArr;
         this.update();
       },
       onModifyUser(data){
