@@ -70,21 +70,3 @@ if (app.get('env') === 'development') {
 //   });
 // });
 
-//TODO:nodejs server app.express.js->  http://webpack.github.io/docs/webpack-dev-server.html
-// var webpack = require('webpack');
-// var WebpackDevServer = require('webpack-dev-server');
-// var config = require('./webpack.config.js');
-//
-// new WebpackDevServer(webpack(config), {
-//    hot: true,
-//    historyApiFallback: true,
-//    proxy: {
-//      "*": "http://localhost:3300"  //localhost:3001的所有请求将会被代理到localhost:3300
-//    }
-// }).listen(3001, 'localhost', function (err, result) {
-//    if (err) {
-//      console.log(err);
-//    }
-//
-//    console.log('Listening at localhost:3001');
-// });
